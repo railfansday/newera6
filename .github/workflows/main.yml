@@ -1,4 +1,4 @@
-name: Import Berita ke Database
+name: Scrape & Export Berita
 
 on:
   workflow_dispatch:          # Bisa dijalankan manual
@@ -11,7 +11,7 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-22.04
-    timeout-minutes: 30
+    timeout-minutes: 45         # Waktu ditambah karena ada proses export HTML
 
     steps:
       - name: Checkout kode
@@ -29,23 +29,27 @@ jobs:
           pip install -r requirements.txt
           pip install feedparser requests beautifulsoup4 lxml
 
-      # ===== JALANKAN FILE IMPORT DATABASE ANDA =====
-      # Ganti 'import_db_saja.py' dengan nama file yang Anda simpan di GitHub
+      # ===== 1. JALANKAN IMPORT (SCRAPER KE DATABASE) =====
       - name: Jalankan Import (Scraper)
         run: python hanyadatabase.py
 
-      # ===== COMMIT & PUSH DATABASE KE GITHUB =====
-      - name: Commit & Push Database
+      # ===== 2. JALANKAN EXPORT (DATABASE KE HTML) =====
+      # Pastikan Anda sudah membuat file export.py (kode SEO yang saya berikan)
+      - name: Jalankan Export (Generate HTML)
+        run: python export.py
+
+      # ===== 3. COMMIT & PUSH SEMUA HASIL =====
+      - name: Commit & Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Memasukkan folder database ke dalam git
-          git add database_hasil5/ || true
+          # Tambahkan folder database DAN semua file HTML, sitemap, robots
+          git add database_hasil5/ *.html *.xml *.txt || true
           
-          # Jika tidak ada perubahan artikel baru, berhenti
-          git diff --staged --quiet && echo "Tidak ada artikel baru" && exit 0
+          # Jika tidak ada perubahan, berhenti
+          git diff --staged --quiet && echo "Tidak ada perubahan" && exit 0
           
-          git commit -m "Update database otomatis [skip ci]"
+          git commit -m "Update otomatis: Database & HTML [skip ci]"
           git pull --rebase origin main || true
           git push
