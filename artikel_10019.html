@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <title>Work on GEFS (the Good Enough File System) for OpenBSD ... | Portal Berita Indonesia</title>
+    <meta name="description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Home Archives About Submit Story Cr...">
+    <link rel="canonical" href="https://railfansday.github.io/newera6/artikel_10019.html">
+    
+    <!-- Open Graph untuk Media Sosial -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Work on GEFS (the Good Enough File System) for OpenBSD ... | Portal Berita Indonesia">
+    <meta property="og:description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Home Archives About Submit Story Cr...">
+    <meta property="og:url" content="https://railfansday.github.io/newera6/artikel_10019.html">
+    <meta property="og:site_name" content="Portal Berita Indonesia">
+    <meta property="og:image" content="">
+    
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Work on GEFS (the Good Enough File System) for OpenBSD progresses", "image": [], "datePublished": "2026-11-03T01:22:08.094234", "dateModified": "2026-11-03T01:22:08.094234", "author": {"@type": "Organization", "name": "Portal Berita Indonesia", "url": "https://railfansday.github.io/newera6"}, "publisher": {"@type": "Organization", "name": "Portal Berita Indonesia", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/newera6/logo.png", "width": 600, "height": 60}}, "description": "atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}}; Home Archives About Submit Story Cr...", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/newera6/artikel_10019.html"}, "url": "https://www.undeadly.org/cgi?action=article;sid=20261101115637"}
+    </script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        .container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 28px; color: #1a1a1a; margin-bottom: 10px; line-height: 1.3; }
+        .meta { font-size: 14px; color: #666; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .content img { max-width: 100%; height: auto; border-radius: 8px; }
+        .content p { margin-bottom: 15px; }
+        .ad-container { margin: 30px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Kembali ke Daftar Berita</a>
+        
+        <h1>Work on GEFS (the Good Enough File System) for OpenBSD progresses</h1>
+        
+        <div class="meta">
+            📅 03 November 2026 | Sumber: <a href="https://www.undeadly.org/cgi?action=article;sid=20261101115637" target="_blank" rel="nofollow noopener">Baca Asli</a>
+        </div>
+        
+        <div class="content">
+            
+            
+            
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            <div class="article-body" style="font-size: 16px; line-height: 1.8; color: #333;">
+                <p>Home
+Archives
+About
+Submit Story
+Create Account
+Login</p>
+<p>Contributed by
+Peter N. M. Hansteen
+on 2026-11-01
+from the most excellent file shredder dept.</p>
+<p>Now Ori has followed up with more evolved code that includes several important steps towards makin the new file system fit for general use. In a message to tech@, Ori writes:
+
+
+
+List:       openbsd-tech
+Subject:    Re: GEFS on OpenBSD: A very early preview
+From:       ori () eigenstate ! org
+Date:       2026-10-31 17:08:42
+
+So, it's probably time for a few updates. First
+off, thanks to Martijn, and everyone else who
+tried it out and sent patches.
+
+Everything is updated and rebased, and the diff
+has been regenerated with all of the lastest.
+
+
+
+
+I've gone through a the error handling code. In
+theory the filesystem will handle errors mostly
+correctly. There are probably still places where
+theory diverges from reality. I've also forward
+ported most of the important bugfixes from 9front.
+
+The file system now leaves the first FS block
+unused by default -- we can put disklabels there,
+which makes it hard to put the superblock there as
+well.
+
+Some userspace tools have been done (you can now
+mkfs on openbsd!), but snapshot control hasn't.
+I'm thinking we have a userspace 'gefs' program
+that lets you handle this, trying to keep the
+interface similar to the 9front ctl file. The
+commands below should suffice:
+
+  gefs debug [0|1]
+  gefs usereserve
+  gefs retain snap timespec
+  gefs snap name newname
+  gefs fork name newname
+
+The consistency protocol is still the biggest
+missing piece; I've been reading the old code
+for softupdates, since it had the same flavor
+of problem.
+
+what gefs wants, in the ideal case, is some way
+to put ordering barriers in the commit phases,
+while still accepting new block i/o, something
+like the following sequence of steps:
+
+	0) normal use, generate dirty blocks and
+	  write back in any order.
+      holding mutlk {
+		1) barrier(), ensure that all blocks
+		 written before the commit will be
+		 on disk before the commit finishes
+		2) enqueue free list/deadlist data
+		3) prepare arena header/footer + superblock
+	 }
+	4) enqueue arena headers
+	5) barrier()
+	6) enqueue superblock
+	7) enqueue arena footers
+	8) wait for enqueued blocks to hit disk
+	9) free blocks no longer used by previous gen
+
+on 9front, I have a priority queue of blocks that
+are sorted by (gen, addr) tuples, which means that
+writes within a generation are flushed to disk as
+sequentially as they can be, while not crossing
+generation boundaries.
+
+I'm currently thinking I'll implement the same in
+OpenBSD -- launch syncer kprocs that do synchronous
+I/O to the block device. If we kick things out of
+cache and write it back to disk early, that should
+generally be safe -- The only blocks the buffer
+cache must not reorder are the arena headers and
+superblocks, so a flag to pin them unwritten may
+be all that's needed here.
+
+I'm open to other ideas, though.
+
+Quoth ori@eigenstate.org:
+
+
+
+Followed by a quoted part of the previous message that has the links to the code and documentation.
+
+If you are as excited as we are about this new file system development and are in a position to test, please do.</p>
+<p>List:       openbsd-tech
+Subject:    Re: GEFS on OpenBSD: A very early preview
+From:       ori () eigenstate ! org
+Date:       2026-10-31 17:08:42
+
+So, it's probably time for a few updates. First
+off, thanks to Martijn, and everyone else who
+tried it out and sent patches.
+
+Everything is updated and rebased, and the diff
+has been regenerated with all of the lastest.
+
+
+
+
+I've gone through a the error handling code. In
+theory the filesystem will handle errors mostly
+correctly. There are probably still places where
+theory diverges from reality. I've also forward
+ported most of the important bugfixes from 9front.
+
+The file system now leaves the first FS block
+unused by default -- we can put disklabels there,
+which makes it hard to put the superblock there as
+well.
+
+Some userspace tools have been done (you can now
+mkfs on openbsd!), but snapshot control hasn't.
+I'm thinking we have a userspace 'gefs' program
+that lets you handle this, trying to keep the
+interface similar to the 9front ctl file. The
+commands below should suffice:
+
+  gefs debug [0|1]
+  gefs usereserve
+  gefs retain snap timespec
+  gefs snap name newname
+  gefs fork name newname
+
+The consistency protocol is still the biggest
+missing piece; I've been reading the old code
+for softupdates, since it had the same flavor
+of problem.
+
+what gefs wants, in the ideal case, is some way
+to put ordering barriers in the commit phases,
+while still accepting new block i/o, something
+like the following sequence of steps:
+
+	0) normal use, generate dirty blocks and
+	  write back in any order.
+      holding mutlk {
+		1) barrier(), ensure that all blocks
+		 written before the commit will be
+		 on disk before the commit finishes
+		2) enqueue free list/deadlist data
+		3) prepare arena header/footer + superblock
+	 }
+	4) enqueue arena headers
+	5) barrier()
+	6) enqueue superblock
+	7) enqueue arena footers
+	8) wait for enqueued blocks to hit disk
+	9) free blocks no longer used by previous gen
+
+on 9front, I have a priority queue of blocks that
+are sorted by (gen, addr) tuples, which means that
+writes within a generation are flushed to disk as
+sequentially as they can be, while not crossing
+generation boundaries.
+
+I'm currently thinking I'll implement the same in
+OpenBSD -- launch syncer kprocs that do synchronous
+I/O to the block device. If we kick things out of
+cache and write it back to disk early, that should
+generally be safe -- The only blocks the buffer
+cache must not reorder are the arena headers and
+superblocks, so a flag to pin them unwritten may
+be all that's needed here.
+
+I'm open to other ideas, though.
+
+Quoth ori@eigenstate.org:
+
+
+
+Followed by a quoted part of the previous message that has the links to the code and documentation.
+
+If you are as excited as we are about this new file system development and are in a position to test, please do.</p>
+<p>Followed by a quoted part of the previous message that has the links to the code and documentation.
+
+If you are as excited as we are about this new file system development and are in a position to test, please do.</p>
+<p>If you are as excited as we are about this new file system development and are in a position to test, please do.</p>
+<p>A modern filesystem has been missing in OpenBSD for quite a while now. GEFS seems to fit the general mindset and is developed inside the tree already, so Iâm really excited about it! Please keep up the good work :)</p>
+<p>Whoops, itâs not in the tree yet, but I canât edit my post. Exciting nonetheless!</p>
+                <p style="margin-top: 25px;">
+                    <a href="https://www.undeadly.org/cgi?action=article;sid=20261101115637" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Baca artikel asli
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
+        </div>
+        
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+            </script>
+            <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+        </div>
+    </div>
+</body>
+</html>

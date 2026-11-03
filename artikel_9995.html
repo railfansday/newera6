@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <title>How We Could Have Backdoored Bash (Hacktron blog) | Portal Berita Indonesia</title>
+    <meta name="description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Given the increase in supply chain ...">
+    <link rel="canonical" href="https://railfansday.github.io/newera6/artikel_9995.html">
+    
+    <!-- Open Graph untuk Media Sosial -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How We Could Have Backdoored Bash (Hacktron blog) | Portal Berita Indonesia">
+    <meta property="og:description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Given the increase in supply chain ...">
+    <meta property="og:url" content="https://railfansday.github.io/newera6/artikel_9995.html">
+    <meta property="og:site_name" content="Portal Berita Indonesia">
+    <meta property="og:image" content="">
+    
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How We Could Have Backdoored Bash (Hacktron blog)", "image": [], "datePublished": "2026-11-03T01:22:06.215233", "dateModified": "2026-11-03T01:22:06.215233", "author": {"@type": "Organization", "name": "Portal Berita Indonesia", "url": "https://railfansday.github.io/newera6"}, "publisher": {"@type": "Organization", "name": "Portal Berita Indonesia", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/newera6/logo.png", "width": 600, "height": 60}}, "description": "atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}}; Given the increase in supply chain ...", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/newera6/artikel_9995.html"}, "url": "https://lwn.net/Articles/1104262/"}
+    </script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        .container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 28px; color: #1a1a1a; margin-bottom: 10px; line-height: 1.3; }
+        .meta { font-size: 14px; color: #666; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .content img { max-width: 100%; height: auto; border-radius: 8px; }
+        .content p { margin-bottom: 15px; }
+        .ad-container { margin: 30px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Kembali ke Daftar Berita</a>
+        
+        <h1>How We Could Have Backdoored Bash (Hacktron blog)</h1>
+        
+        <div class="meta">
+            📅 03 November 2026 | Sumber: <a href="https://lwn.net/Articles/1104262/" target="_blank" rel="nofollow noopener">Baca Asli</a>
+        </div>
+        
+        <div class="content">
+            
+            
+            
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            <div class="article-body" style="font-size: 16px; line-height: 1.8; color: #333;">
+                <p>Given the increase in supply chain attacks, I really don't understand why so many projects still feel comfortable to fully rely on centralized, server-side security mechanisms. Almost every time I look at a real or potential supply chain attack, I cannot help but wonder how much more difficult or fragile the attack would have been if regular code signing would be more ubiquitous.</p>
+<p>Almost every modern system has a HSM, Secure Enclave, or whatever; and if you don't like those, there are OpenPGP-smartcards, YubiKeys, ... you name it. If you don't like PGP, OpenSSH also supports signing for over six years now, including FIDO2-backed signatures.
+Git support for OpenPGP signatures goes back for decades, and OpenSSH signatures are also supported for more than 5 years now. Yet, nobody seems to care – worse, even basic infrastructure like cargo, pip, npm, etc., don't offer an optional possibility to attach and require signatures.</p>
+<p>To be clear: I neither blame individual developers nor maintainers; I'm a big fan of provided-as-is – nobody should be forced to buy a YubiKey just because they are hobby devs. Nonetheless if we operate at an institutional scale, where we have legal entities and supply core infrastructure... I don't get it – not even to blame someone, I just simply don't get it.</p>
+<p>Classical banking provides a more nuanced (if less formalized) picture. Entities have credit risk, collateral must be made available, and all sorts of derivatives are traded against those things. The trading is both hedging (to protect yourself against a business partner's default) and speculative (because you have an opinion about their decline or recovery). Clearing houses like the Options Clearing Corporation create a safe harbor for mutual trust by holding its members to a high standard of credit-worthiness.
+
+In technology we have lots of perfectly correct, cryptographically-sound signing solutions. We don't have the semi-formal credit systems that banking has shown to mostly work. I think this is largely because trust is radically efficient, and mistrust carries a lot of overhead and capital drag. It's better if we can rely on trust, but best if we could formalize credit efficiently and solve for distributed trust management.</p>
+<p>In technology we have lots of perfectly correct, cryptographically-sound signing solutions. We don't have the semi-formal credit systems that banking has shown to mostly work. I think this is largely because trust is radically efficient, and mistrust carries a lot of overhead and capital drag. It's better if we can rely on trust, but best if we could formalize credit efficiently and solve for distributed trust management.</p>
+<p>Even if you have full cryptographic signing, there are still classes of attacks that compromise the keys or certificates and break it open.</p>
+<p>Definitely, trust is hard, and code signing is by no means a silver bullet; it only helps against certain attack scenarios, and also has to be applied correctly. Nonetheless, E2E signature chains make a lot of attacks much harder or fragile or – in abstract terms – more expensive.</p>
+<p>It's a bit like saying: TLS is not perfect, CAs are not secure, and someone might roll a private key of 4 (obligatory xkcd). Nonetheless, nobody would seriously argue that we probably should ditch TLS and go back to plain HTTP.</p>
+<p>Of course, this doesn't scale well (especially to regular people which often don't even know what TLS is), but if you don't need to trust many web servers (and I don't) and your users are capable of verifying a PGP signature manually (mine can), it can be enough.</p>
+<p>I might be wrong there, but I had the impression that if the user chooses to import your site's certificate system-wide the only option they have for that is to make it a trust anchor, and therefore allow it to act as a CA, because (from my understanding) quite a few TLS clients assume that all trust anchors are inherently allowed to act as CAs, and cert extensions like basicConstraints (which says "this is an end entity and not a CA") are only honored at least one level down from that.
+
+So if I've got that right, then making your users treat each web or TLS server as a potential CA exposes them to more risk (as each server has its key online) compared to having a real personal CA (whose key you can guard properly).
+
+This is on top of needing to repeat the PGP verification step manually for each new server (or each new key rotation), rather than verifying the private CA just once...
+
+(And of course trust anchors can't be revoked except for everyone removing them manually, whereas if your one server's key is compromised, your private CA can issue a CRL – which most of Linux TLS ecosystem sadly doesn't check, lagging 30 years behind other platforms, but at least I think the major web browsers do.)</p>
+<p>So if I've got that right, then making your users treat each web or TLS server as a potential CA exposes them to more risk (as each server has its key online) compared to having a real personal CA (whose key you can guard properly).
+
+This is on top of needing to repeat the PGP verification step manually for each new server (or each new key rotation), rather than verifying the private CA just once...
+
+(And of course trust anchors can't be revoked except for everyone removing them manually, whereas if your one server's key is compromised, your private CA can issue a CRL – which most of Linux TLS ecosystem sadly doesn't check, lagging 30 years behind other platforms, but at least I think the major web browsers do.)</p>
+<p>This is on top of needing to repeat the PGP verification step manually for each new server (or each new key rotation), rather than verifying the private CA just once...
+
+(And of course trust anchors can't be revoked except for everyone removing them manually, whereas if your one server's key is compromised, your private CA can issue a CRL – which most of Linux TLS ecosystem sadly doesn't check, lagging 30 years behind other platforms, but at least I think the major web browsers do.)</p>
+<p>(And of course trust anchors can't be revoked except for everyone removing them manually, whereas if your one server's key is compromised, your private CA can issue a CRL – which most of Linux TLS ecosystem sadly doesn't check, lagging 30 years behind other platforms, but at least I think the major web browsers do.)</p>
+<p>Hmmm, I don't know.  I set `basicConstraints = CA:FALSE`, but if clients ignore that, then I'd say it's a bug in clients.
+
+> So if I've got that right, then making your users treat each web or TLS server as a potential CA exposes them to more risk (as each server has its key online) compared to having a real personal CA (whose key you can guard properly).
+>
+> This is on top of needing to repeat the PGP verification step manually for each new server (or each new key rotation), rather than verifying the private CA just once...
+
+I've been considering that option.  I'm not experienced enough in OpenSSL to have a CA myself, but I'd consider eventually having one.  Of course, I'd like to restrict it to emitting certificates for my domains only, and I'd sign the CA itself with my PGP key, but indeed, it would be an improvement over what I'm doing now.
+
+> trust anchors can't be revoked
+
+That's not a big deal.  I assume and ask users to assume that my server is not trusted, and that the only things they can trust from it are the PGP-signed commits in the git repositories.  The reason I provide TLS is not for authenticating my server (I don't consider it authentic myself), but rather for encrypting (at least part of) the requests and responses, so that people sniffing (and perhaps injecting adds or other stuff) have it at least more difficult.</p>
+<p>> So if I've got that right, then making your users treat each web or TLS server as a potential CA exposes them to more risk (as each server has its key online) compared to having a real personal CA (whose key you can guard properly).
+>
+> This is on top of needing to repeat the PGP verification step manually for each new server (or each new key rotation), rather than verifying the private CA just once...
+
+I've been considering that option.  I'm not experienced enough in OpenSSL to have a CA myself, but I'd consider eventually having one.  Of course, I'd like to restrict it to emitting certificates for my domains only, and I'd sign the CA itself with my PGP key, but indeed, it would be an improvement over what I'm doing now.
+
+> trust anchors can't be revoked
+
+That's not a big deal.  I assume and ask users to assume that my server is not trusted, and that the only things they can trust from it are the PGP-signed commits in the git repositories.  The reason I provide TLS is not for authenticating my server (I don't consider it authentic myself), but rather for encrypting (at least part of) the requests and responses, so that people sniffing (and perhaps injecting adds or other stuff) have it at least more difficult.</p>
+<p>I've been considering that option.  I'm not experienced enough in OpenSSL to have a CA myself, but I'd consider eventually having one.  Of course, I'd like to restrict it to emitting certificates for my domains only, and I'd sign the CA itself with my PGP key, but indeed, it would be an improvement over what I'm doing now.
+
+> trust anchors can't be revoked
+
+That's not a big deal.  I assume and ask users to assume that my server is not trusted, and that the only things they can trust from it are the PGP-signed commits in the git repositories.  The reason I provide TLS is not for authenticating my server (I don't consider it authentic myself), but rather for encrypting (at least part of) the requests and responses, so that people sniffing (and perhaps injecting adds or other stuff) have it at least more difficult.</p>
+<p>> trust anchors can't be revoked
+
+That's not a big deal.  I assume and ask users to assume that my server is not trusted, and that the only things they can trust from it are the PGP-signed commits in the git repositories.  The reason I provide TLS is not for authenticating my server (I don't consider it authentic myself), but rather for encrypting (at least part of) the requests and responses, so that people sniffing (and perhaps injecting adds or other stuff) have it at least more difficult.</p>
+<p>That's not a big deal.  I assume and ask users to assume that my server is not trusted, and that the only things they can trust from it are the PGP-signed commits in the git repositories.  The reason I provide TLS is not for authenticating my server (I don't consider it authentic myself), but rather for encrypting (at least part of) the requests and responses, so that people sniffing (and perhaps injecting adds or other stuff) have it at least more difficult.</p>
+<p>FWIW, most (all?) GNU projects GPG-sign their release tarballs and release git tags. For GNU coreutils and Gnulib, our repository is mirrored in many places, some automatically syncing from Savannah and some not. So, if this issue were abused, it certainly wouldn't be good, but it wouldn't be unrecoverable.
+
+Anyways, it is very refreshing to see a software security company disclose these issues responsibly, and follow it up with an article that is not condescending to the project in discussion and which voices their good intentions:
+
+> Like much of the infrastructure free software depends on, it’s run by a handful of volunteers and FSF staff with limited resources. We wanted to put our resources to work there.
+
+Many thanks to them for that, and for catching these issues.</p>
+<p>Anyways, it is very refreshing to see a software security company disclose these issues responsibly, and follow it up with an article that is not condescending to the project in discussion and which voices their good intentions:
+
+> Like much of the infrastructure free software depends on, it’s run by a handful of volunteers and FSF staff with limited resources. We wanted to put our resources to work there.
+
+Many thanks to them for that, and for catching these issues.</p>
+<p>> Like much of the infrastructure free software depends on, it’s run by a handful of volunteers and FSF staff with limited resources. We wanted to put our resources to work there.
+
+Many thanks to them for that, and for catching these issues.</p>
+<p>Many thanks to them for that, and for catching these issues.</p>
+<p>FWIW, most (all?) GNU projects GPG-sign their release tarballs and release git tags</p>
+<p>This sounds like git commits are not necessarily signed; is there a technical or operational reason for this? Because I imagine that you could use such a backdoor to subtly inject or rewrite commits, and those changes would inadvertently end up inside the signed tarballs as well?</p>
+<p>Even with SHA-1, this is not feasible. While the collision resistance of SHA-1 is broken and you can craft special pairs of inputs that share the same arbitrary hash, the pre-image resistance still is comparatively solid – finding a different input for a given hash is still not practical.</p>
+<p>There are some attacks for very long messages (2^100 operations for 2^60 bytes), but for the given scenario "commit hashes unchanged [aka given] and the diffs relatively similar", there are no known attacks against SHA-1. We still should probably switch to SHA-2 sooner than later nonetheless; but for this specific requirement, SHA-1 is still more than strong enough for now.</p>
+<p>While the collision resistance of SHA-1 is broken and you can craft special pairs of inputs that share the same arbitrary hash, ...</p>
+<p>So this just adds one more layer to the attack. Before you change the git repository you need to craft this pair of commits, one with a genuine bug fix that you sneak into the repository and another one additionally containing an evil payload. Once you have access to the repository you can switch out the commits.</p>
+<p>Yes, this sounds far fetched, but not so much after the xz utils attack.</p>
+<p>We still should probably switch to SHA-2 sooner than later nonetheless;</p>
+<p>Well, neither commit it going to look normal. There's going to be 128 binary bytes in there as the algorithm tries to make two files with the same hash. Then they have a common suffix.
+
+So the good and evil payload exist in both commits, you just have to find 128 bytes which are somehow going to select the evil or the good payload. In the actual attack it involved a file with a pdf and an embedded jpeg. In pdf there is lots of room to hide stuff, in source code not so much.
+
+A chosen prefix attack would be more dangerous but AFAIK does not exist.
+
+Besides the fact that GitHub (and other libraries) have code to detect this attack.</p>
+<p>So the good and evil payload exist in both commits, you just have to find 128 bytes which are somehow going to select the evil or the good payload. In the actual attack it involved a file with a pdf and an embedded jpeg. In pdf there is lots of room to hide stuff, in source code not so much.
+
+A chosen prefix attack would be more dangerous but AFAIK does not exist.
+
+Besides the fact that GitHub (and other libraries) have code to detect this attack.</p>
+<p>A chosen prefix attack would be more dangerous but AFAIK does not exist.
+
+Besides the fact that GitHub (and other libraries) have code to detect this attack.</p>
+<p>Besides the fact that GitHub (and other libraries) have code to detect this attack.</p>
+<p>If you have A-B-[you merge C]-C'-[others pull]-[others push]-[you pull because others pushed], you will be the only one who has a diverging history. Now, if that is a problem depends on your git config – if you have pull.ff, git will abort; but if you have pull.rebase or pull.no-rebase, you need to be rather vigilant to notice anything.</p>
+<p>As an attacker, I probably would also try to insert a new commit instead of rewriting one; but on the other hand if you know that people are using (no-)rebase, a silent rewrite would be really hard to detect afterwards. And (no-)rebase is not super uncommon in my experience, because depending on how you or your team work, feature branches are not necessarily linear.</p>
+<p>If I were an attacker, I think crafting an evil Merge remote-branch 'master' into 'my-topic' commit which adds the evil content among a sea of "sync" changes in a contribution would be a juicy target. Especially in squash merge workflows.</p>
+<p>I really need to finish the "reject up-merges" check to ban such "wrong way" merges…but any merge commit is ripe for abuse. At least in the standard forge-based flows. Email, Gerrit, and other per-patch mechanisms would be "immune" from it just by the fact that they don't handle merge commit contributions like that.</p>
+<p>Posted Nov 2, 2026 11:58 UTC (Mon)
+                               by branden (guest, #7029)
+                              [Link] (2 responses)</p>
+<p>The default Git setup on Savannah--or at least groff's--is configured to not allow force pushes at all.
+
+That's a little frustrating for me, because I'd prefer to have public "feature branches" or, for example right now, a "post-1.25" branch since we're in a (sort of) code freeze for the 1.25.0 release.
+
+But for the way I work, there's no point having a feature branch if I can't rewrite its history aggressively, because I make lots of mistakes and change my mind frequently.
+
+I think I asked once if force-pushes could be enabled for certain branches, but I don't recall ever getting an answer.
+
+But if this policy keeps Savannah safer from a supply-chain attack, I won't grumble.</p>
+<p>That's a little frustrating for me, because I'd prefer to have public "feature branches" or, for example right now, a "post-1.25" branch since we're in a (sort of) code freeze for the 1.25.0 release.
+
+But for the way I work, there's no point having a feature branch if I can't rewrite its history aggressively, because I make lots of mistakes and change my mind frequently.
+
+I think I asked once if force-pushes could be enabled for certain branches, but I don't recall ever getting an answer.
+
+But if this policy keeps Savannah safer from a supply-chain attack, I won't grumble.</p>
+<p>But for the way I work, there's no point having a feature branch if I can't rewrite its history aggressively, because I make lots of mistakes and change my mind frequently.
+
+I think I asked once if force-pushes could be enabled for certain branches, but I don't recall ever getting an answer.
+
+But if this policy keeps Savannah safer from a supply-chain attack, I won't grumble.</p>
+<p>I think I asked once if force-pushes could be enabled for certain branches, but I don't recall ever getting an answer.
+
+But if this policy keeps Savannah safer from a supply-chain attack, I won't grumble.</p>
+<p>But if this policy keeps Savannah safer from a supply-chain attack, I won't grumble.</p>
+<p>But does it? Because this is just a server-side setting – if I have RCE, this doesn’t help at all. Maybe it prevents some users from configuring automatic rebase/merge on pull (then they would detect altered history); but aside from that it wouldn’t help here.</p>
+<p>Not to mention that while people sort of know how to make spot human decentralized release signing work untangling the needs of mostly automated pre-release code pipelines (continuous testing of commits, MRs and dependencies) would require some major investigation and rethinking by someone.</p>
+<p>Copyright © 2026, Eklektix, Inc.
+            
+            Comments and public postings are copyrighted by their creators.
+            Linux  is a registered trademark of Linus Torvalds</p>
+                <p style="margin-top: 25px;">
+                    <a href="https://lwn.net/Articles/1104262/" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Baca artikel asli
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
+        </div>
+        
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+            </script>
+            <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+        </div>
+    </div>
+</body>
+</html>

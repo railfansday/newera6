@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <title>Postgres 19 is late, and it&#x27;s AI&#x27;s fault | Portal Berita Indonesia</title>
+    <meta name="description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Sr. Staff Software Engineer @ Datab...">
+    <link rel="canonical" href="https://railfansday.github.io/newera6/artikel_9997.html">
+    
+    <!-- Open Graph untuk Media Sosial -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Postgres 19 is late, and it&#x27;s AI&#x27;s fault | Portal Berita Indonesia">
+    <meta property="og:description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Sr. Staff Software Engineer @ Datab...">
+    <meta property="og:url" content="https://railfansday.github.io/newera6/artikel_9997.html">
+    <meta property="og:site_name" content="Portal Berita Indonesia">
+    <meta property="og:image" content="">
+    
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Postgres 19 is late, and it's AI's fault", "image": [], "datePublished": "2026-11-03T01:22:06.446586", "dateModified": "2026-11-03T01:22:06.446586", "author": {"@type": "Organization", "name": "Portal Berita Indonesia", "url": "https://railfansday.github.io/newera6"}, "publisher": {"@type": "Organization", "name": "Portal Berita Indonesia", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/newera6/logo.png", "width": 600, "height": 60}}, "description": "atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}}; Sr. Staff Software Engineer @ Datab...", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/newera6/artikel_9997.html"}, "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html"}
+    </script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        .container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 28px; color: #1a1a1a; margin-bottom: 10px; line-height: 1.3; }
+        .meta { font-size: 14px; color: #666; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .content img { max-width: 100%; height: auto; border-radius: 8px; }
+        .content p { margin-bottom: 15px; }
+        .ad-container { margin: 30px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Kembali ke Daftar Berita</a>
+        
+        <h1>Postgres 19 is late, and it&#x27;s AI&#x27;s fault</h1>
+        
+        <div class="meta">
+            📅 03 November 2026 | Sumber: <a href="http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html" target="_blank" rel="nofollow noopener">Baca Asli</a>
+        </div>
+        
+        <div class="content">
+            
+            
+            
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            <div class="article-body" style="font-size: 16px; line-height: 1.8; color: #333;">
+                <p>Sr. Staff Software Engineer @ Databricks, PostgreSQL Major Contributor and Committer</p>
+<p>Over the past decade, the timing of PostgreSQL major releases has become very predictable: no earlier than the middle of September, and no later than the middle of October. This year is going to be different. PostgreSQL 19 most likely won’t be released until November, and it’s not impossible that the project could decide to postpone the release further.</p>
+<p>Moreover, this year, several rather large features were reverted quite late in the beta period: UPDATE/DELETE FOR PORTION OF, SQL Property Graph Queries (SQL/PGQ), and ALTER TABLE … MERGE PARTITION/SPLIT PARTITION were all reverted between August 27 and September 15. While major feature reverts are not especially uncommon immediately after feature freeze, which each year occurs on April 8, it is unusual to see multiple major features get pulled from the release at such a late date. So, what happened?</p>
+<p>The short answer is that LLMs happened. All software contains bugs, and PostgreSQL’s code base is large, complex, and old. Our git history – converted from CVS – now reaches back more than 30 years, and the first code was written a decade before that. There’s a huge amount of code, and that code contains a huge number of bugs. That’s always been true, and it hasn’t stopped PostgreSQL from being popular or successful. What’s different now is that it’s become vastly easier to find those bugs. Fixing them has also gotten easier, but not to the same degree.</p>
+<p>Between April 8th, 2025 and September 25, 2025, there were 1037 commits to PostgreSQL’s master branch and 724 commits to REL_18_STABLE. In 2026, during the same date range, there were 1443 commits to the master branch and 1169 commits to REL_19_STABLE. In other words, if you look at the number of commits that went into the master branch only between feature freeze and September 25th, it actually declined slightly from last year to this year, but the number of back-patched commits jumped by more than 60%.</p>
+<p>It’s possible that some of this jump is the result of committers making more mistakes this year than they did last year, but I don’t think anyone who works on the project really believes that’s the main cause. Rather, it seems likely that PostgreSQL committers were about as conservative in 2026 as they were in preceding years, but a lot more of the mistakes they made were quickly found by LLMs.</p>
+<p>And it isn’t just mistakes in the latest release. In the same time period, during 2025, there were 248 commits to REL_17_STABLE, and during 2026, there were 433 commits to REL_18_STABLE. In other words, the number of commits being back-patched not just to the release in progress but also to at least one prior release jumped by more than 74% in a single year. The reason for this is simply that a huge number of people on the Internet are now reporting bugs in PostgreSQL that they found using LLMs, and the PostgreSQL committers have been very, very busy fixing them.</p>
+<p>And I think that’s also why we had so many late reverts, and why the release itself is delayed. Two factors are at play here.</p>
+<p>First, because so many more bugs are being found now, it takes more time to fix them. LLMs can draft fixes, but those fixes aren’t always correct or compliant with PostgreSQL standards. So, they still need to be reviewed and committed by humans, and those humans have not gotten any smarter between 2025 and 2026.</p>
+<p>Second, time that would have been spent reviewing what went into the release got diverted into addressing security issues and other bugs in the back-branches, and so it took longer to figure out what needed to be reverted before shipping v19.</p>
+<p>In the end, I don’t think that the delay in shipping PostgreSQL 19 is particularly concerning. It is not a long delay in the grand scheme of things, and it emerges directly from the project’s concern for quality.</p>
+<p>The long-term picture is less clear and in some ways more troubling: given that we have forty years of bugs that humans were unable to find but LLMs are quite capable of discovering, how are we ever going to catch up, and how will PostgreSQL continue to innovate? Right now, I’m not sure. What I do know is that I, and many others, are working really hard to figure it out.</p>
+<p>I became a PostgreSQL developer partly because the PostgreSQL code base is some of the cleanest and highest-quality code upon which I have ever had the privilege to work. The recent success of AI in finding bugs in that code base does not change my high estimation of it. It is not perfect – no software product is – but if it had more defects visible even to human eyes, the number of things found by LLMs would likely be even greater.</p>
+<p>There’s no escaping the fact that LLMs are going to require every PostgreSQL developer – and some extent, every software developer on earth – to raise their game. Every feature that we write from now until the end of our careers will be scrutinized by AI, and things that would have escaped forever unnoticed in an earlier era will now be found, perhaps in a matter of hours. That’s both a challenge and an opportunity.</p>
+<p>[This blog post originally appeared at https://neon.com/blog/postgres-19-is-late-and-its-ais-fault]</p>
+<p>you've got to draw the line somewhere-- was not meant to be in reply to "this is actually good."</p>
+<p>Two years ago, people used to say AI lowered the bar for software engineers, now it's raising it up again, even higher than before.</p>
+<p>Version 19, and maybe 20, might then become the most robust and reliable releases ever, maybe with fewer new features. Feels like a necessary slowdown that will allow future releases to be sped up.</p>
+<p>> might then become the most robust and reliable releases everWhat was the last release of PostgreSQL that you recall being not robust or reliable? How much increased reliability, in terms of measured real-world benefit, justifies the relatively late reversion of three significant features?"Perfect is the enemy of good" is a pretty good summary of what is happening with this release.</p>
+<p>It needs to be more robust than it was, from a security standpoint because attackers have access to LLMs too. The bar has been raised for attacks so it needs to be raised for security fixes.</p>
+<p>Calling a Postgres release "late" feels weird in a world where the vast majority of software with a fixed release date is half-finished mess and so many production setups end up skipping many major versions regardless of potential improvements.</p>
+<p>Its the problem of web development, before it code had to finish. Nowadays code must go on, improve, fix, but never finish its all subscription based, there is always something to improve or a useful feature to add #rnd-future-generator...</p>
+<p>The ones that actually tend to be very late on Postgres releases are cloud providers.</p>
+<p>Oops sorry you are right, Would you like me to give other examples of human failures, or would you rather explore the pitfalls of the current design, we could also migrate this to mySql, tell me what do you want?</p>
+                <p style="margin-top: 25px;">
+                    <a href="http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Baca artikel asli
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
+        </div>
+        
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+            </script>
+            <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+        </div>
+    </div>
+</body>
+</html>

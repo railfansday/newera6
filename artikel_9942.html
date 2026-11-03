@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <title>An outsider&#x27;s perspective on Scion and Mononoke | Portal Berita Indonesia</title>
+    <meta name="description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Recently, Anthropic wrote a blog po...">
+    <link rel="canonical" href="https://railfansday.github.io/newera6/artikel_9942.html">
+    
+    <!-- Open Graph untuk Media Sosial -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="An outsider&#x27;s perspective on Scion and Mononoke | Portal Berita Indonesia">
+    <meta property="og:description" content="atOptions = {&#x27;key&#x27; : &#x27;f9e40eb3b3cd05f1038aac7b36b33ad2&#x27;,&#x27;format&#x27; : &#x27;iframe&#x27;,&#x27;height&#x27; : 90,&#x27;width&#x27; : 728,&#x27;params&#x27; : {}}; Recently, Anthropic wrote a blog po...">
+    <meta property="og:url" content="https://railfansday.github.io/newera6/artikel_9942.html">
+    <meta property="og:site_name" content="Portal Berita Indonesia">
+    <meta property="og:image" content="">
+    
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "NewsArticle", "headline": "An outsider's perspective on Scion and Mononoke", "image": [], "datePublished": "2026-11-03T01:22:02.461332", "dateModified": "2026-11-03T01:22:02.461332", "author": {"@type": "Organization", "name": "Portal Berita Indonesia", "url": "https://railfansday.github.io/newera6"}, "publisher": {"@type": "Organization", "name": "Portal Berita Indonesia", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/newera6/logo.png", "width": 600, "height": 60}}, "description": "atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}}; Recently, Anthropic wrote a blog po...", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/newera6/artikel_9942.html"}, "url": "https://typesanitizer.com/blog/scion.html"}
+    </script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        .container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 28px; color: #1a1a1a; margin-bottom: 10px; line-height: 1.3; }
+        .meta { font-size: 14px; color: #666; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .content img { max-width: 100%; height: auto; border-radius: 8px; }
+        .content p { margin-bottom: 15px; }
+        .ad-container { margin: 30px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Kembali ke Daftar Berita</a>
+        
+        <h1>An outsider&#x27;s perspective on Scion and Mononoke</h1>
+        
+        <div class="meta">
+            📅 03 November 2026 | Sumber: <a href="https://typesanitizer.com/blog/scion.html" target="_blank" rel="nofollow noopener">Baca Asli</a>
+        </div>
+        
+        <div class="content">
+            
+            
+            
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            <div class="article-body" style="font-size: 16px; line-height: 1.8; color: #333;">
+                <p>Recently, Anthropic wrote a blog post about their new centralized version control system Scion. As someone working on the Source Control team at Databricks, where we have a huge monorepo and are exploring different options, I figured it might be useful to share my perspective here.</p>
+<p>(Obligatory disclaimer: This post represents my own views, not my employer’s.)</p>
+<p>I recommend reading Anthropic’s post before continuing to read this one.
+You may also want to pre-read Rain Paharia’s Anthropic’s Scion is heavily inspired by Mononoke and the follow-up More on Anthropic’s Scion ripping off Mononoke.</p>
+<p>Before we get into the weeds, it might be helpful to you to know where I’m coming from.
+If you’re not interested in this, you can jump to the Technical Commentary section.</p>
+<p>I have never worked at Facebook, but one of my all-time favorite tech talks is Durham Goode’s Scaling Mercurial at Facebook from Git Merge 2017.Goode was the longest-serving and most senior member on Facebook’s Source Control team. (source)</p>
+<p>The talk covers various interesting aspects for both the server side and the client side. For the server side, some of the topics include solving push contention with server-side rebasing (pushrebase), using scalable object storage for commits, moving various source control queries to the server, etc. For the client, there’s mention of the smartlog and other CLI commands for easier manipulation of history (compared to rebasing in Git).</p>
+<p>However, more so than the technical aspects of the talk (which are interesting in their own right!), the main thing that has stayed with me throughout these years is the deep care for users that is reflected in Goode’s tone and words. It’s a bit difficult to convey this without the power of voice,You should watch the presentation!
+
+ but here are some quotes which reflect this:</p>
+<p>In the context of hg smartlog:hg smartlog gives you a focused view of your branches and how they relate to the development trunk.</p>
+<p>I know Git can produce this kind of UI if you know the incantation, but the critical thing here is not that it can be done; it’s that it becomes the default view of their source-control environment. That is where the power comes from: making it really intuitive for users to use source control and understand the concepts without reading a man page.</p>
+<p>In the context of hg absorb:hg absorb auto-magically identifies the right commits in a stack to squash fixes into and rewrites history accordingly. This makes it easier to work with stacked changes.</p>
+<p>This is the type of UI that we need to be inventing for our users: ones that match their intent and do it to the best of their ability, without making the user understand everything they have to do. It’s a little bit magic, but it’s magic in a very clean way. I think a lot of user experiences could benefit from this approach.</p>
+<p>If you want to undo an amend or undo parts of a commit in Mercurial, you just run unamend and uncommit. You don’t have to understand a reflog; you don’t have to get a PhD to understand reset anymore. It just works, and it gives users confidence that they can recover from mistakes. That’s one of the most important things we can do: provide user experiences that give them confidence in what they’re doing.</p>
+<p>On the user experience side, we as a source control community need to do a better job of building UIs that are accessible, intuitive, and that enable novice users to be power users. Everything I just talked about is how we are trying to do that for our users at Facebook. If the Git community could do that, the massive number of Git users taking advantage of it has the potential to redefine productivity for an entire generation of users.</p>
+<p>Over the years, the possibility of these workflows lingered in my mind as I continued working with Git. I tried building my own wrappers on top of the git CLI to do some of these things, but I couldn’t get the performance to be reasonable since everything shelled out to git all the time, and I didn’t understand Git’s internals well enough to do something better.</p>
+<p>I ended up sticking with vanilla Git until Waleed KhanWaleed worked at Facebook on dev tools, and later did work at Twitter related to version control.
+
+ created git-branchless, with support for a smartlog, in-memory rebases, undo and more. I eagerly adopted it. I also used Stephen Jung’s git-absorb quite a bit. Even today, the initial bit of git absorb’s README cites the mention of hg absorb on a Mozilla mailing list as the key inspiration.</p>
+<p>Finally, earlier this year (2026), I mostly switched to using jj, after having bounced off of it a couple of times. jj was created by Martin von Zweigbergk, who previously contributed to Git and later joined Google and worked on their internal Mercurial client for the monorepo.Source: Mercurial at Google (2023).</p>
+<p>So even though I have almost exclusively worked with Git throughout my career, I am in a way indebted to the work on Mercurial by Goode and numerous other contributors.</p>
+<p>I’ve talked a bit about my personal usage of version control tooling. Let me briefly describe work I’ve done related to version control.</p>
+<p>From late 2021 to late 2025, I worked at Sourcegraph on code indexing and navigation. For the last two of those years, I worked more on the backend written in Go, where the code navigation was coupled to version control.This is because code navigation data could be uploaded for ~any commit.</p>
+<p>During this time, one of the recurring sources of incidents was the (non-)incremental updates for the commit graph structure that was mirrored into Postgres, in order to be able to efficiently compute what code navigation data (stored in Postgres) was “visible” at which commit.</p>
+<p>I recall being frustrated with that, and half-jokingly proposing that it would be good to move to a more custom storage solution or have custom indexes next to Git’s storage itself. That proposal didn’t particularly go anywhere (not that I expected it to), but the frustration with Git as a hard-to-operate database stayed with me.</p>
+<p>Since around March 2026, I’ve been working on Source Control at Databricks. Some of the things I’ve worked on include:</p>
+<p>So in a way, I’ve been ~responsible for monitoring and maintaining the health of thousands of git checkouts (of our huge internal monorepoDepending on the specifics of compression, the history of the master branch ends up in the range of 20-50GB.
+
+) for the past few months. (Life lesson: don’t get upset at a database for being hard-to-operate lest the monkey’s paw curls? 😄)</p>
+<p>Apart from my main work, I have spent dozens of hours studying jj, Mononoke (the open-source server for Facebook’s VCS), TigerBeetle and, to a lesser extent, RocksDB and papers on LSM trees. I also prototyped a minimal code storage server in Tiger Style.</p>
+<p>Over this time, I was also fortunate enough to attend Git Merge 2026.Interestingly enough, the sponsors included OpenAI, Google, GitHub, Cursor, etc., and the attendees included a bunch of employees from Meta who work on Sapling/Mononoke, but no Anthropic employees were present AFAICT.</p>
+<p>Whew, that was a lot of words! At least, I hope that this helps you understand where I’m coming from when I write the points below.</p>
+<p>This section covers what I think of the overall design and development processes that have been described in the post on Scion.</p>
+<p>Having studied Sapling/Mononoke, and having spent some time thinking about how to build a version control server, the following bits felt obviousI understand that the post is written for a broader audience, so it makes sense to repeat things which may be “obvious” to people who work in the area. That said, I think there’s value in separating out/clarifying to readers what is common knowledge within a given area vs what is genuinely novel. For example, if you were writing an academic paper, common knowledge would go into a Background section, not into the later sections.
+
+ (and hence not worth emphasizing) and/or copied (without clear attribution):</p>
+<p>In order to support this growth, we built Scion, an in-house version control system, and fully migrated our monorepo from git in five months. We also built and shipped a code review surface (called Antique), code search, a rich source control IAM system, novel ways of managing and landing large amounts of reviewed code, and more, all in that same time period.</p>
+<p>This was done by a team of 7 people and an undisclosed number of Claude tokens.</p>
+<p>On reading this, my first thought was, “That’s still quite a lot of work.” With Git, it’s very easy for people (or agents) to come up with complex operations to do specific things, which can be difficult to easily map to other VCSes as-is. So it’s impressive that they managed to rip out Git fully regardless.It’s not 100% clear in the post if they’ve done so, but I’m assuming this based on the wording in the post.</p>
+<p>I’m guessing that one or more of the following are true: (1) their monorepo lacks a file-based OWNERS system (2) the OWNERS system largely goes through with automated approvals from Claude (and hence does not bottleneck on human approvals) or (3) they used some targeted bypasses to go in and change people’s code to use their custom scn client instead of git.</p>
+<p>we created Slack channels where we tasked Claude with being obsessively focused on the health of a single component. We call these Claudes “superfans.” We have a scion-daemon superfan, a scion-cache superfan, an Antique merge queue superfan [..] They have access to our telemetry and logs, and act like an experienced engineer who has nothing better to do than to refresh charts and look for anything strange. We also have traditional alerts for all of our systems, but our superfans can detect subtle and novel issues that make these alerts seem one-dimensional by comparison.</p>
+<p>This is a pattern which I (personally) have not heard of being deployed elsewhere, presumably in large part due to the cost of frontier-model tokens. I’m guessing this will become more widespread as token prices fall.</p>
+<p>It would’ve been nice if they’d given some examples of what “subtle and novel issues” these superfans found.</p>
+<p>The development lifecycle in Scion discourages refs (pointers to commits, such as branches and tags), except for the main ref or release branches, because global state that every server has to agree on is a looming scaling problem.</p>
+<p>This point didn’t quite add up for me. The amount of data associated with a ref is very small – it’s the ref’s name and the ID of the object it points to. If you separate out temporary refs (for landing/organizing work) and long-lived refs (for release branches), then temporary refs can be automatically cleaned up and would be proportional to the number of changes in flight. The long-lived refs would keep adding up anyway (and potentially contribute to whatever scaling problem is anticipated).</p>
+<p>So how does not using refs in the dev loop help?</p>
+<p>I can see a downstream correctness argument for avoiding refs, where it’s easy to accidentally write a job which (if it works with refs) accidentally pulls in two different commits (as the ref moves) instead of detecting ref movement and triggering failure/retry. However, it’s also easy to make a different kind of mistake just working with commit IDs – you could keep running the job for a commit that has become unreachable due to a push.</p>
+<p>There are several points in the article related to resource utilization which didn’t add up in my head.</p>
+<p>Beyond these, there are standard workarounds for large monorepos, like internal git mirrors and repository snapshots (seeds) kept in blob storage. We’ve used all of them—at our peak, we operated several hundred internal git mirrors to deal with the load.</p>
+<p>At Databricks, we do something similar with reference repos which are updated every ~2 hours, and we have fewer than 10 git mirrors to deal with CI load, despite the repo size being within the ~same order of magnitude. Even with this many mirrors, the CPU load is well under control, and increasing the frequency of snapshots from 2h to, say, 1h or even 30min – which would reduce CPU load on the mirrors – would be doable with a bit of work.</p>
+<p>So it’s difficult for me to think of what kind of workload would necessitate “several hundred” git mirrors. Maybe very wide fan-outs for tests in CI?</p>
+<p>Similarly, there’s another point about maintaining the mirrors later on:</p>
+<p>At our peak, we ran several hundred git mirrors, which significantly strained capacity and no longer scaled once the repo outgrew the mirrors’ disks or memory limits</p>
+<p>It’s unclear how a repo with 100GB of history on the main branch could outgrow the disks on modern cloud instances, which can have several TB of storage. Yes, it requires some level of care wrt. maintenance, but disk limits and memory limits should generally not be the major problems here. Memory in particular is even more odd, because most accesses will likely be for the most recent data, which can easily stay resident in a few GB of RAM at most.</p>
+<p>Many of the pre-migration numbers provided on the chart (which make the Scion numbers look impressive) seem way too high, and some of the ones post-migration also seem unusually high. As one example, the charts show that the p50 for ‘pull latest’ fell from 87s → 3.5s. Each of these feels off for different reasons.This is one of the places where the post – by going wide instead of deep – makes it difficult to understand what’s actually being said. For example, percentiles can easily be skewed downwards due to automated background loops (esp. those running at high frequency) if most operations short-circuit to no-ops.</p>
+<p>Pre-migration: At our scale, fetching the changes at the start of a day can take over a minute, but after that, fetches are much faster. So even the p90 for fetch operations ends up being under 1 minute. Granted, “fetch” and “pull latest for the trunk” are not equivalent operations. However, I’m not sure what it would take for things to be so bad for the p50 to be at 87s if you do background pre-fetching once a devbox has booted up.</p>
+<p>Post-migration: 3.5s seems surprisingly high, given everything else. With sparse checkouts, presumably this number should be proportional to the size of the diff within that subset between pull operations. For example, naively, I’d expect network to be the limiting factor: even at 2GbpsGCP doesn’t appear to have ingress bandwidth limits for instances within a VPC, so I’m using the “2Gbps per vCPU” (for egress) as a rough guide/underestimate of available bandwidth.
+
+ you could transfer 875MB in 3.5s. I can’t imagine the amount of data being transferred for a p50 “pull latest” being even close to that, so there must be something else that’s the bottleneck. Maybe the query for determining what data should be pulled is the slowest bit? Too many RPCs? Serialization/deserialization overhead? 🤷</p>
+<p>Before we explore what we built, we should acknowledge how unusual our workload is. Unsurprisingly, Anthropic uses Claude to write software far more than almost any other company, so we’re often the first to see where tools built for human scale start to strain. Source control is just one example of this. While we don’t expect many organizations to have these problems in the very near term, we suspect it won’t be too long before others who use AI coding tools experience these same pressure points, which is why we wanted to share what we built and what we learned.</p>
+<p>The vibe of this paragraph captures the vibe of the rest of the article. It is simultaneously:</p>
+<p>As Rain put in their post More on Anthropic’s Scion ripping off Mononoke:</p>
+<p>It is always good to situate your work in the larger context. We all stand on the shoulders of giants! There is nothing wrong with borrowing and adapting existing work to new contexts — that is the vast majority of what I do as an engineer. When you position your work as derivative, you are acknowledging those that came before you, as you hope to be acknowledged by those who come after you.</p>
+<p>Given how they’ve framed their work and how they’ve recognized prior work only with cursory nods (this changed somewhat after they got called out for it!), I’m now much less surprised by their absence at Git Merge 2026. Historically, companies and developers have joined communities to learn from other people’s expertise, and to be able to recruit people interested in the same areas.</p>
+<p>Now that companies can increasingly point LLMs to clone your codebase, it is understandable that some of them no longer feel the need to engage with the corresponding communities in the same manner.</p>
+<p>One of the major problems with the blog post is that it is unclear as to what primary purpose it is meant to serve and who the target audience is.</p>
+<p>Perhaps because of the lack of a clear audience in mind, even though the post was (thankfully!) not LLM-written, many parts of it suffer from LLM-isms like:</p>
+<p>Historically, using version control has been a fairly human-centric activity. While you might have a sprinkling of deterministic automations, such as for bumping dependencies, reverting PRs which introduced regressions, etc., the main user was the developer.</p>
+<p>As increasingly more companies use LLM agents for increasingly more parts of the development lifecycle, it is understandable that LLMs become the primary “user” for a VCS, and the developer is abstracted away from the VCS. In such a world, if you’re focused on the LLM as the “user”, you could ask questions about metrics like error rates/undo rates/latency for tool calls.</p>
+<p>If you take a broader view and are interested in the end-to-end developer experience, you might still care about questions such as “what are the problems people face when trying to use the VCS via LLMs”, as well as “which operations are slow but frequent, and could be replaced with fast and deterministic tooling instead.”</p>
+<p>But the post really does not touch upon either of those points, and overall ends up having no clear narrative arc as a result.</p>
+<p>The post starts out with a relatively vague motivation:</p>
+<p>the latent demand for merging code is practically infinite, and every bottleneck we remove immediately leads to a further increase in the amount of code we produce. In order to support this growth, we built Scion [..]</p>
+<p>However, near the end of the post, the wins are stated in terms of reduced CPU utilization (which translates to increased capacity for other things) and simplified systems (I understand why this is a win, but it seems like this was not the original motivation for pursuing this path).</p>
+<p>I understand that the new VCS is able to support the current growth, but the implied thesis that the VCS was the bottleneck and removing that bottleneck actually unlocked the growth lacks compelling evidence in the post – one is left to wonder how much of the growth is attributable to increased background automations vs. model changes vs. other factors.</p>
+<p>For example, were people frequently blocked from landing PRs because CI was at capacity and runs remained queued for a long time? If so, did freeing up capacity help reduce the time from PR creation to merging, which in turn led to more PRs being created? Maybe! But the reader is basically left to just guess all of the intermediate details without a clear connecting thread.</p>
+<p>When I first started reading the post, I went in with high expectations. After all, it has historically been rare for companies to build their own version control systems, and given how much money and talent Anthropic have at their disposal, I thought the post would’ve been a lot more interesting than it actually turned out to be.</p>
+<p>Overall, had Anthropic clearly stated up front what parts of the design were copied from other systems with proper attribution, and focused the post on how they managed the migration, I think the post would’ve been more honest, more streamlined and also more useful to people outside Anthropic. Specifically:</p>
+<p>The post does none of that,It’s understandable that they wouldn’t want to open-source the code itself, as untangling it from the rest of the monorepo and having development in multiple places would add friction for themselves for unclear benefit.
+
+ presents several previously established ideas as seemingly original without a clear separation between the two, and frames the high-level description as a “gift” to the developer ecosystem/Source Control community.</p>
+                <p style="margin-top: 25px;">
+                    <a href="https://typesanitizer.com/blog/scion.html" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Baca artikel asli
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
+        </div>
+        
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = {'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+            </script>
+            <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+        </div>
+    </div>
+</body>
+</html>
